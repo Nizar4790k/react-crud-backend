@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "6303f647e438b47d449839b0"
+  },
+  "name": "Manzana Roja",
+  "price": 10
+},{
+  "_id": {
+    "$oid": "6303f6e9e438b47d449839b2"
+  },
+  "name": "Coca Cola",
+  "price": 15
+},{
+  "_id": {
+    "$oid": "6303f6e9e438b47d449839b3"
+  },
+  "name": "Pan",
+  "price": 5
+},{
+  "_id": {
+    "$oid": "6303f6e9e438b47d449839b4"
+  },
+  "name": "Pica Pollo",
+  "price": 200
+}]

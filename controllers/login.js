@@ -1,6 +1,6 @@
 const handleLogin = async (req, res, database, bcrypt) =>{
 
-    var isFound = false;
+    
 
     const { email, password } = req.body;
     
@@ -21,11 +21,11 @@ const handleLogin = async (req, res, database, bcrypt) =>{
         
         let collection = db.collection("users");
 
-        isFound = await checkUser(email,password,collection,bcrypt);
+        const result = await checkUser(email,password,collection,bcrypt);
 
-        if(isFound){
+        if(result){
        
-            res.json({status:"ACCESS_GRANTED",user:email})
+            res.json({status:"ACCESS_GRANTED",user:result})
             
         }else{
             res.json({status:"ACCESS_DENIED"});
@@ -56,7 +56,7 @@ async function checkUser(email,password,collection,bcrypt){
         let value = bcrypt.compareSync(password,result.password);
         
         if (value) {
-            return true;
+            return {fullName:result.fullName,id:result._id};
         } else {
             return false;
         }
